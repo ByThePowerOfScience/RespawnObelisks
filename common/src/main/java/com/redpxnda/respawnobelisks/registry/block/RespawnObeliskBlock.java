@@ -185,7 +185,7 @@ public class RespawnObeliskBlock extends Block implements BlockEntityProvider {
 
             boolean hasPlayedCurseAnim = false;
             if (RespawnObelisksConfig.INSTANCE.immortalityCurse.enableCurse && (charge-cost < 0 || forceCurse) && shouldCost) { // if cost brings charge below 0, curse
-                boolean applyCurse = isTeleport || player.isAlive();
+                boolean applyCurse = !(isTeleport || player.isAlive());
                 int amplifier = applyCurse ?
                         (
                                 mei != null ?
